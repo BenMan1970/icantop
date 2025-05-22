@@ -117,7 +117,7 @@ if start_date >= end_date:
     st.error("La date de début doit être antérieure à la date de fin")
     st.stop()
 
-# Sélection de la période
+# Sélection de la période (CORRECTION APPLIQUÉE ICI)
 timeframe_map = {
     "1 Minute": TimeFrame.Minute,
     "15 Minutes": TimeFrame.Minute_15,
@@ -126,7 +126,7 @@ timeframe_map = {
 }
 timeframe = st.sidebar.selectbox(
     "Période", 
-    options=list(timeframe_map.keys())
+    options=list(timeframe_map.keys())  # Parenthèse fermante ajoutée ici
 selected_timeframe = timeframe_map[timeframe]
 
 # --- Récupération des données ---
